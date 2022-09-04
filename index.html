@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+  *
+  {
+    margin: 0px;
+    padding: 0px;
+  }
+  .container
+  {
+    width: 100vw;
+    margin-top: 50px;
+    
+  }
+ 
+ 
+  input[type=text]{
+    width: 94%;
+    height: 80px;
+    font-size: 30px;
+    text-align: right;
+    border:none;
+  }
+#res{
+    font-size: 43px;
+    width:68vw;
+    
+  }
+  .result{
+    margin-left: 4vw;
+    font-size: 30px;
+    color: red;
+  }
+  .all-button{
+    
+   margin-left: 4vw; 
+   margin-top: 20px;
+  }
+    
+    input[type=button]
+    {
+      width: 22vw;
+      height: 70px;
+      font-size: 40px;
+      background: black;
+      color: white;
+      border: 2px solid white;
+      border-radius: 20px;
+      margin: 3px 0px;
+    }
+    #c,#e{
+      width:45vw;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <script>
+    function display(val)
+    {
+      document.getElementById('inp').value+=val;
+      return val;
+    }
+    function solve()
+    {
+   var   x=document.getElementById('inp').value;
+   var y=eval(x);
+   document.getElementById('res').value=y;
+   
+    }
+    function deleteAll()
+    {
+     document.getElementById('inp').value='';
+     document.getElementById('res').value='';
+    }
+    
+  </script>
+</head>
+
+<body>
+   <div class="container">
+  <div class="input-result">
+    <div class="input">
+    <input type="text" name="inp" id="inp" onfocus="this.blur()" >
+    </div>
+    <div class="result">
+    Result <input type="text" name="res" id="res" value="0" onfocus="this.blur()">
+    </div>
+  </div>
+ 
+  <div class="all-button">
+    <div class="row">
+<input type="button" value="7" class="button" onclick="display(7)">
+<input type="button" value="8" class="button" onclick="display(8)">
+<input type="button" value="9" class="button" onclick="display(9)">
+<input type="button" value="+" class="button+" onclick= "display('+')">
+</div>
+<div class="row">
+  <input type="button" value="4" class="button" onclick="display(4)">
+<input type="button" value="5" class="button" onclick="display(5)">
+<input type="button" value="6" class="button" onclick="display(6)">
+<input type="button" value="-" class="button-" onclick= "display('-')">
+</div>
+<div class="row">
+  <input type="button" value="1" class="button" onclick="display(1)">
+  <input type="button" value="2" class="button" onclick="display(2)">
+  <input type="button" value="3" class="button" onclick="display(3)">
+  <input type="button" value="X" class="button-" onclick= "display('*')">
+</div>
+<div class="row">
+  <input type="button" value="0" class="button" onclick= "display(0)">
+  <input type="button" value="." class="button" onclick= "display('.')">
+  <input type="button" value="00" class="button" onclick= "display('00')">
+  <input type="button" value="/" class="button/" onclick= "display('/')">
+</div>
+<div class="lastrow">
+  
+
+<input type="button" value="=" class="button=" onclick="solve()" id="e">
+<input type="button" value="C" class="buttonc" id="c" onclick="deleteAll()">
+</div>
+</div>
+</div>
+</body>
+
+</html>
